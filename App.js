@@ -1,12 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Project Start</Text>
-    </View>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Project Start</Text>
+        <Text style={[styles.bigFont, styles.text]}>Big Font</Text>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -16,4 +19,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    color: '#ddbaba',
+  },
+  bigFont: {
+    fontSize: 30,
+  },
 });
+
+AppRegistry.registerComponent('Ennui', () => App);
